@@ -40,9 +40,24 @@ unsetopt beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
-autoload -U promptinit
-promptinit
-prompt suse
+# Prompt
+autoload colors; colors
+export PS1="%B%{$fg[red]%}%n%{$reset_color%}%b@%B%{$fg[cyan]%}%m%b%{$reset_color%}:%3~ %# "
+
+# show host name tab/title bar
+case $TERM in
+    sun-cmd)
+        precmd () { print -Pn "\e]l%~\e\\" }
+        preexec () { print -Pn "\e]l%~\e\\" }
+        ;;
+    *xterm*|rxvt|(dt|k|E)term)
+        # Need to know my host more than my user name. %n will do it though
+        precmd () { print -Pn "\e]2;%m:%~\a" }
+        preexec () { print -Pn "\e]2;%m:%~\a" }
+        ;;
+esac
+
+# Aliases
 
 #hash wt=~/work/whitetruffle
 #alias -s py=vim
