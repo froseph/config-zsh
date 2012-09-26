@@ -54,10 +54,17 @@ source "`brew --prefix grc`/etc/grc.bashrc"
 autoload colors; colors
 autoload -Uz vcs_info
 # disable a bunch of vcs_info support
-zstyle ':vcs_info:*' disable bzr cdv cvs darcs mtn p4 svk svn tla
-
+zstyle ':vcs_info:*' enable git hg
+setopt PROMPT_SUBST
 
 export PS1="%B%{$fg[red]%}%n%{$reset_color%}%b@%B%{$fg[cyan]%}%m%b%{$reset_color%}:%3~ %# "
+
+# XXX testing
+zstyle ':vcs_info:*' actionformats '%F{5}%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
+zstyle ':vcs_info:*' formats       '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f '
+#zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
+export PS1='%F{5}[%F{2}%n%F{5}] %F{3}%3~ ${vcs_info_msg_0_}%f%# '
+
 
 # show host name tab/title bar
 case $TERM in
@@ -69,6 +76,11 @@ case $TERM in
         # Need to know my host more than my user name. %n will do it though
         precmd () { vcs_info; print -Pn "\e]2;%m:%~\a" }
         preexec () { print -Pn "\e]2;%m:%~\a" }
+        ;;
+    *)
+        # By default need vcs_info. This is used for tmx/screen etc
+        precmd () { vcs_info }
+        preexec () {  }
         ;;
 esac
 
