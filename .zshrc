@@ -1,4 +1,5 @@
-#source `brew --prefix`/Library/Contributions/brew_zsh_completion.zsh
+# Environment Varibles
+######################
 PATH=~/bin:/usr/local/bin:$PATH:/usr/local/sbin:/usr/local/share/npm/bin
 typeset -U PATH
 export PATH
@@ -11,7 +12,8 @@ export CLICOLOR=1
 export GREP_OPTIONS='--color=auto'
 export LSCOLORS=Exfxcxdxbxegedabagacad
 
-source "`brew --prefix grc`/etc/grc.bashrc"
+# Autocomplete settings
+#######################
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _complete _ignored _match _correct _approximate
@@ -31,6 +33,9 @@ zstyle :compinstall filename '/Users/froseph/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+# ZSH Config stuff
+##################
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=10000
@@ -40,25 +45,35 @@ unsetopt beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
+# Brew j0nx
+###########
+source "`brew --prefix grc`/etc/grc.bashrc"
+
 # Prompt
+########
 autoload colors; colors
+autoload -Uz vcs_info
+# disable a bunch of vcs_info support
+zstyle ':vcs_info:*' disable bzr cdv cvs darcs mtn p4 svk svn tla
+
+
 export PS1="%B%{$fg[red]%}%n%{$reset_color%}%b@%B%{$fg[cyan]%}%m%b%{$reset_color%}:%3~ %# "
 
 # show host name tab/title bar
 case $TERM in
     sun-cmd)
-        precmd () { print -Pn "\e]l%~\e\\" }
+        precmd () { vcs_info; print -Pn "\e]l%~\e\\" }
         preexec () { print -Pn "\e]l%~\e\\" }
         ;;
     *xterm*|rxvt|(dt|k|E)term)
         # Need to know my host more than my user name. %n will do it though
-        precmd () { print -Pn "\e]2;%m:%~\a" }
+        precmd () { vcs_info; print -Pn "\e]2;%m:%~\a" }
         preexec () { print -Pn "\e]2;%m:%~\a" }
         ;;
 esac
 
-# Aliases
-
+# Aliases / Shortcuts
+#####################
 #hash wt=~/work/whitetruffle
 #alias -s py=vim
 #
