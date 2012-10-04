@@ -57,13 +57,14 @@ autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git hg
 setopt PROMPT_SUBST
 
-export PS1="%B%{$fg[red]%}%n%{$reset_color%}%b@%B%{$fg[cyan]%}%m%b%{$reset_color%}:%3~ %# "
+#export PS1="%B%{$fg[red]%}%n%{$reset_color%}%b@%B%{$fg[cyan]%}%m%b%{$reset_color%}:%5~ %# "
 
 # XXX testing
 zstyle ':vcs_info:*' actionformats '%F{5}%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
 zstyle ':vcs_info:*' formats       '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f '
 #zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
-export PS1='%F{5}[%F{2}%n%F{5}] %F{3}%3~ ${vcs_info_msg_0_}%f%# '
+#export PS1='%F{5}[%F{2}%n%F{5}] %F{3}%~ ${vcs_info_msg_0_}%f%# '
+export PS1='${vcs_info_msg_0_}%F{2}%n%{$fg[red]%}@%F{2}%m%{$fg[red]%}:%F{3}%~ %f%# '
 
 
 # show host name tab/title bar
