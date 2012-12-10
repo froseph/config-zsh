@@ -90,7 +90,7 @@ esac
 #hash wt=~/work/whitetruffle
 #alias -s py=vim
 #
-alias start_mysql='mysql.server start'
+alias mysql_start='mysql.server start'
 alias wt_env='source ~/work/whitetruffle/src/localenv/bin/activate'
 alias mnm_env='source ~/work/mavenandman/src/localenv/bin/activate'
 
