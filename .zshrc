@@ -91,10 +91,13 @@ esac
 #alias -s py=vim
 #
 alias mysql_start='mysql.server start'
+alias mysql_stop='mysql.server stop'
+alias nginx_start='[ -f ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist ] && sudo launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist'
+alias nginx_stop='[ -f ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist ] && sudo launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist'
+
 alias wt_env='source ~/work/whitetruffle/src/localenv/bin/activate'
 alias mnm_env='source ~/work/mavenandman/src/localenv/bin/activate'
 
-alias nginx_start='[ -f ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist ] && sudo launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist'
-alias nginx_stop='[ -f ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist ] && sudo launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist'
 alias wt_mysql="mysql -u webweb -p'!wH1TeTruff|3!' whitetruffle"
-
+alias wt_paster='paster serve --reload local.ini'
+alias wt_redis='redis-server local-redis.conf'
