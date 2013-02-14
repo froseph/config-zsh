@@ -98,6 +98,7 @@ alias nginx_stop='[ -f ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist ] && sud
 alias wt_env='source ~/work/whitetruffle/src/localenv/bin/activate'
 alias mnm_env='source ~/work/mavenandman/src/localenv/bin/activate'
 
-alias wt_mysql="mysql -u webweb -p'!wH1TeTruff|3!' whitetruffle"
+# local dev fake password
+alias wt_mysql="mysql -h localhost -u webweb -p'!wH1TeTruff|3!' whitetruffle"
 alias wt_paster='paster serve --reload local.ini'
 alias wt_redis='redis-server local-redis.conf'
