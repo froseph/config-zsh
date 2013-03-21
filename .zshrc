@@ -1,6 +1,6 @@
 # Environment Varibles
 ######################
-PATH=~/bin:/usr/local/bin:$PATH:/usr/local/sbin:/usr/local/share/npm/bin
+PATH=~/bin:/usr/local/share/npm/bin:/usr/local/tranquil/bin:/usr/local/bin:/usr/local/sbin:$PATH
 typeset -U PATH
 export PATH
 
