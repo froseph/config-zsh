@@ -17,6 +17,9 @@ export CLICOLOR=1
 export GREP_OPTIONS='--color=auto'
 export LSCOLORS=Exfxcxdxbxegedabagacad
 
+# make my python have tabcomplete goodness
+export PYTHONSTARTUP="~/.pythonrc"
+
 # Autocomplete settings
 #######################
 # The following lines were added by compinstall
