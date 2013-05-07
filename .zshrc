@@ -18,7 +18,7 @@ export GREP_OPTIONS='--color=auto'
 export LSCOLORS=Exfxcxdxbxegedabagacad
 
 # make my python have tabcomplete goodness
-export PYTHONSTARTUP="~/.pythonrc"
+export PYTHONSTARTUP="$HOME/.pythonrc"
 
 # Autocomplete settings
 #######################
