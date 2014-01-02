@@ -121,3 +121,6 @@ alias mnm_env='source ~/work/mavenandman/src/localenv/bin/activate'
 alias wt_mysql="mysql -h localhost -u webweb -p'!wH1TeTruff|3!' whitetruffle"
 alias wt_paster='paster serve --reload local.ini'
 alias wt_redis='redis-server local-redis.conf'
+
+# soil
+alias soil_env='source ~/projects/soil/venv/bin/activate'
