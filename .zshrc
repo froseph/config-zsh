@@ -126,4 +126,4 @@ alias wt_redis='redis-server local-redis.conf'
 alias soil_env='source ~/projects/soil/venv/bin/activate'
 
 # autoenv
-source /usr/local/opt/autoenv/activate.sh
+#source /usr/local/opt/autoenv/activate.sh
