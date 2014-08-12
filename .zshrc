@@ -61,7 +61,7 @@ bindkey -e
 # Brew j0nx
 ###########
 if (( $+commands[brew] )) ; then
-    source "`brew --prefix grc`/etc/grc.bashrc"
+    source "`brew --prefix`/etc/grc.bashrc"
 fi
 
 # Prompt
