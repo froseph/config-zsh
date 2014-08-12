@@ -1,6 +1,6 @@
 # Environment Varibles
 ######################
-PATH=~/projects/arcanist/arcanist/bin/:~/bin:~/.cabal/bin:/usr/local/share/npm/bin:/usr/local/tranquil/bin:/usr/local/Cellar/macvim/7.3-66/bin:/usr/local/bin:/usr/local/sbin:/Applications/git-annex.app/Contents/MacOS:$PATH
+PATH=~/bin:~/.cabal/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH
 typeset -U PATH
 export PATH
 #To use Homebrew's directories rather than ~/.rbenv add to your profile:
