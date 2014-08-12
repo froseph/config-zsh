@@ -39,7 +39,12 @@ zstyle ':completion:*' squeeze-slashes true
 zstyle :compinstall filename '/Users/froseph/.zshrc'
 
 autoload -Uz compinit
-compinit
+# Homebrew is not multiuser.Hooray.
+if (( $+commands[brew] )) ; then
+    compinit -u
+else
+    compinit -u
+fi
 # End of lines added by compinstall
 
 # ZSH Config stuff
