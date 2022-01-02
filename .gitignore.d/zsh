@@ -1,0 +1,6 @@
+*
+!/.gitignore.d
+!/.gitignore.d/zsh
+!/.p10k.zsh
+!/.zshrc.d
+!/.zshrc.d/*
